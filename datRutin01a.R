@@ -1,12 +1,12 @@
-# 
+
+# Ch-1 --------------------------------------------------------------------
+## dataset 
 datTotal <- read.csv("dat/denTot.csv", na.string="#N/A")
 head(datTotal)
 str(datTotal)
 
 par(mfrow=c(3,1))
 
-
-# Ch-1 --------------------------------------------------------------------
 ## line plot
 plot(datTotal$time, datTotal$denguel0, type="l", ylab="Cases", xlab="t")
 plot(datTotal$time, datTotal$templ0, type="l", ylab="Temperature", xlab="t")
