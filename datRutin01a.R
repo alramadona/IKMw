@@ -19,6 +19,11 @@ boxplot(rainl0~month, data=datTotal, main="Rainfall", xlab="m", ylab="")
 
 
 # Ch-2 --------------------------------------------------------------------
+
+# CRAN task views aim to provide some guidance which packages on CRAN 
+# are relevant for tasks related to a certain topic. 
+# https://cran.r-project.org/web/views/
+
 ## library
 #install.packages("zoo")
 library(zoo)
