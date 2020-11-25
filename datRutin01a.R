@@ -2,8 +2,12 @@
 # Ch-1 --------------------------------------------------------------------
 ## dataset 
 datTotal <- read.csv("dat/denTot.csv", na.string="#N/A")
+
 head(datTotal)
+View(datTotal)
+
 str(datTotal)
+summary(datTotal)
 
 par(mfrow=c(3,1))
 
