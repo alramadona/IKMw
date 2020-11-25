@@ -1,8 +1,11 @@
 
 # Ch-1 --------------------------------------------------------------------
-## dataset 
+## dataset
+### membuka file 'denTot.csv'
+### file berada pada direktori 'dat/'
 datTotal <- read.csv("dat/denTot.csv", na.string="#N/A")
 
+### review isi file
 head(datTotal)
 View(datTotal)
 
@@ -11,12 +14,17 @@ summary(datTotal)
 
 par(mfrow=c(3,1))
 
+### mengakses suatu variabel
+datTotal$templ0
+
 ## line plot
-plot(datTotal$time, datTotal$denguel0, type="l", ylab="Cases", xlab="t")
+### FORMAT: plot(X,Y, type="l", ylab="Kasus", xlab="t")
+plot(datTotal$time, datTotal$denguel0, type="l", ylab="Kasus", xlab="t")
 plot(datTotal$time, datTotal$templ0, type="l", ylab="Temperature", xlab="t")
 plot(datTotal$time, datTotal$rainl0, type="l", ylab="Rainfall", xlab="t")
 
 ## box plot
+### FORMAT: boxplot(Y~X, data=datTotal, main="Cases", xlab="m", ylab="")
 boxplot(denguel0~month, data=datTotal, main="Cases", xlab="m", ylab="")
 boxplot(templ0~month, data=datTotal, main="Temperature", xlab="m", ylab="")
 boxplot(rainl0~month, data=datTotal, main="Rainfall", xlab="m", ylab="")
@@ -38,6 +46,7 @@ source("multiplot.R")
 
 dat <- datTotal
 
+### konversi suatu variabel
 dat$YM <- paste(dat$month, dat$year, sep="-")
 dat$YM
 
