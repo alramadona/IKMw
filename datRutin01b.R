@@ -101,7 +101,8 @@ for(i in c(1:52959)){
   textdata[i] <- corpus[[i]]$content
   }
 
-wordcloud(textdata, max.words=150)
+wordcloud(textdata, max.words=200)
+wordcloud(textdata, min.freq=200)
 
 # Biblioshiny
 # install.packages("bibliometrix") 
