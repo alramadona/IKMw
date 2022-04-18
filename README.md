@@ -3,4 +3,4 @@
 2020 - Direktorat Gizi Masyarakat, Kemenkes RI & Pusat Kebijakan dan Manajemen Kesehatan (PKMK), FK-KMK UGM
 
 ### MK Promosi Kesehatan Berbasis TI - visualisasi data dalam strategi komunikasi promosi kesehatan
-2020 - Direktorat Gizi Masyarakat, Kemenkes RI & Pusat Kebijakan dan Manajemen Kesehatan (PKMK), FK-KMK UGM
+2022 - Direktorat Gizi Masyarakat, Kemenkes RI & Pusat Kebijakan dan Manajemen Kesehatan (PKMK), FK-KMK UGM
