@@ -2,7 +2,7 @@
 # Diharapkan peserta dapat mencoba untuk menginstal software 
 # (1) R 
 # (2) R-studio 
-# secara berurutan, sebelum pelaksanaan pelatihan. 
+# secara berurutan, sebelum pelaksanaan perkuliahan. 
 # 
 # File installer 'freely available' untuk sistem operasi utama seperti Windows, MacOS dan Linux; 
 # dapat diperoleh melalui tautan berikut.
