@@ -1,5 +1,7 @@
+#
+#
 # Peserta perkuliahan akan diperkenalkan dengan software analisis data dan pemrograman, yakni R.
-# Diharapkan peserta dapat mencoba untuk menginstal software 
+# Diharapkan peserta dapat melakukan instalasi software 
 # (1) R 
 # (2) R-studio 
 # secara berurutan, sebelum pelaksanaan perkuliahan. 
@@ -8,22 +10,24 @@
 # dapat diperoleh melalui tautan berikut.
 # (1) https://cran.r-project.org/
 # (2) https://www.rstudio.com/products/rstudio/download/#download
-
-# Pada 50 menit sesi pertama perkuliahan, Anda diminta untuk menyaksikan paparan materi 
+#
+##################################################################################################
+#
+# Pada 50 menit sesi pertama perkuliahan, Anda diminta untuk menyimak paparan materi 
 # berdasarkan video presentasi yang dapat diakses melalui tautan berikut.
 # https://youtu.be/5MuPjcXTbR0?t=199
-# Selanjutnya, berikan catatan untuk menjawab pertanyaan-pertanyaan di bawah ini.
+# Selanjutnya, berikan catatan dengan menjawab pertanyaan-pertanyaan di bawah ini.
 # Q1 - sebutkan satu contoh sumber maha data dan deskripsikan potensi pemanfaatannya 
 # dalam aktivitas promosi kesehatan.
 # Q2 - hal apa saja yang dapat Anda pertimbangkan ketika memvisualisasikan data, 
-# khususnya untuk high dimensional data visualization​   
-
+# khususnya untuk high dimensional data visualization
+#
 # Pada 50 menit sesi kedua perkuliahan akan lebih berupa 'praktikum' sehingga 
 # Anda akan lebih banyak aktif; mencoba mengikuti instruksi dan mereproduksi studi kasus.
 # Materi praktikum dapat diperoleh melalui tautan berikut.
 # https://github.com/alramadona/IKMw
 # 
-# Harapannya, peserta dapat mengenal aplikasi R dan mengembangkan keahlian baru, serta mampu  
-# melakukan studi lanjut secara mandiri.
+# Harapannya, peserta dapat mengenal dan mulai menggunakan R & R-studio, serta mampu  
+# melakukan studi lanjut (pendalaman materi) secara mandiri.
 # 
 # 
