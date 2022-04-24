@@ -49,7 +49,7 @@ l %>% addPolygons(color = "grey", weight = 1, fillColor = ~pal(SMR), fillOpacity
   addLegend(pal = pal, values = ~SMR, opacity = 0.5, title = "SMR", position = "bottomright")
 
 
-# studi kasus -------------------------------------------------------------
+# latihan -----------------------------------------------------------------
 
 dat <- read.csv("dat/Yk_kasus.csv")
 dat$pop <- as.integer((dat$Pop_2016_II + dat$Pop_2017_I)/2)
@@ -119,3 +119,24 @@ leaflet(data = dat) %>% addTiles() %>%
 leaflet(data = dat) %>% addTiles() %>%
   addCircleMarkers(~lon, ~lat, color = ~pal(BM), radius = ~log(BM_val)) %>% 
   addProviderTiles(providers$CartoDB.Positron)
+
+
+# latihan -----------------------------------------------------------------
+
+dat <- read.csv("dat/KesLing_Loc.csv")
+dat$n <- c(1:nrow(dat))
+head(dat, 10)
+
+# keterangan
+leaflet(data = dat) %>% addTiles() %>%
+  addMarkers(~long, ~lat, popup = ~as.character(keterangan)) %>% 
+  addProviderTiles(providers$CartoDB.Positron)
+
+# NIM
+leaflet(data = dat) %>% addTiles() %>%
+  addCircleMarkers(~long, ~lat, color = "blue", radius = 3, label = ~as.character(NIM)) %>%
+  addProviderTiles(providers$CartoDB.Positron)
+
+# cluster
+leaflet(data = dat) %>% addTiles() %>% 
+  addMarkers(~long, ~lat, clusterOptions = markerClusterOptions())
