@@ -8,7 +8,6 @@ data(pennLC)
 ?pennLC
 
 head(pennLC$geo, 10)
-
 head(pennLC$data, 10)
 head(pennLC$smoking, 10)
 
@@ -24,20 +23,19 @@ pennLC$data <- pennLC$data[order(pennLC$data$county, pennLC$data$race, pennLC$da
 E <- expected(population = pennLC$data$population, cases = pennLC$data$cases, n.strata = 16)
 
 d$E <- E
-head(d)
-
-d <- merge(d, pennLC$smoking, by = "county")
+head(d, 10)
 
 d$SMR <- d$Y/d$E
-
 head(d, 10)
+
+rownames(d) <- d$county
 
 # add data to map
 map <- pennLC$spatial.polygon
+plot(map)
 
 library(sp)
 
-rownames(d) <- d$county
 map <- SpatialPolygonsDataFrame(map, d, match.ID = TRUE)
 head(map@data)
 
@@ -50,31 +48,19 @@ pal <- colorNumeric(palette = "YlOrRd", domain = map$SMR)
 l %>% addPolygons(color = "grey", weight = 1, fillColor = ~pal(SMR), fillOpacity = 0.5) %>%
   addLegend(pal = pal, values = ~SMR, opacity = 0.5, title = "SMR", position = "bottomright")
 
-## extra
-
-labels <- sprintf("<strong>%s</strong><br/>Observed: %s <br/>Expected: %s <br/>Smokers proportion: %s <br/>SMR: %s",
-                  map$county, map$Y,  round(map$E, 2), map$smoking, round(map$SMR, 2)) %>%
-  lapply(htmltools::HTML)
-
-l %>% addPolygons(color = "grey", weight = 1, fillColor = ~pal(SMR), fillOpacity = 0.5,
-                  highlightOptions = highlightOptions(weight = 4),
-                  label = labels,
-                  labelOptions = labelOptions(style = list("font-weight" = "normal", padding = "3px 8px"),
-                                              textsize = "15px", direction = "auto")) %>%
-  addLegend(pal = pal, values = ~SMR, opacity = 0.5, title = "SMR", position = "bottomright")
-
 
 # studi kasus -------------------------------------------------------------
 
 dat <- read.csv("dat/Yk_kasus.csv")
 dat$pop <- as.integer((dat$Pop_2016_II + dat$Pop_2017_I)/2)
+head(dat, 10)
 
 totPop <- sum(dat$pop)
 totKasus <- sum(dat$kasus)
 
 dat$E <- as.integer(dat$pop/totPop * totKasus)
-
 dat$SMR <- dat$kasus/dat$E
+head(dat, 10)
 
 #library(maptools)
 #mapYk <- readShapePoly("dat/map/yogyakarta-village.shp")
@@ -113,12 +99,23 @@ l %>% addPolygons(color = "grey", weight = 1, fillColor = ~pal(SMR), fillOpacity
 
 dat <- read.csv("dat/Yk_points.csv")
 dat$n <- c(1:nrow(dat))
+head(dat, 10)
 
 # https://rstudio.github.io/leaflet/markers.html
 leaflet(data = dat) %>% addTiles() %>%
-  addMarkers(~lon, ~lat, popup = ~as.character(keterangan), label = ~as.character(keterangan)) %>% 
+  addMarkers(~lon, ~lat, popup = ~as.character(keterangan)) %>% 
   addProviderTiles(providers$CartoDB.Positron)
 
 leaflet(data = dat) %>% addTiles() %>%
   addCircleMarkers(~lon, ~lat, radius = ~n) %>% 
+  addProviderTiles(providers$CartoDB.Positron)
+
+pal <- colorFactor(c("green", "orange", "red"), domain = c("I", "II", "III"))
+
+leaflet(data = dat) %>% addTiles() %>%
+  addCircleMarkers(~lon, ~lat, color = ~pal(BM)) %>% 
+  addProviderTiles(providers$CartoDB.Positron)
+
+leaflet(data = dat) %>% addTiles() %>%
+  addCircleMarkers(~lon, ~lat, color = ~pal(BM), radius = ~log(BM_val)) %>% 
   addProviderTiles(providers$CartoDB.Positron)
