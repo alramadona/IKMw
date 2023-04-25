@@ -6,4 +6,4 @@
 2022 - Minat PPK, Departemen Perilaku Kesehatan, Lingkungan dan Kedokteran Sosial, FK-KMK UGM
 
 ### MK Metode Analisis Lingkungan - GPS, GIS, Geospatial Health 
-2022 - Minat Kesehatan Lingkungan, Departemen Perilaku Kesehatan, Lingkungan dan Kedokteran Sosial, FK-KMK UGM
+2022/3 - Minat Kesehatan Lingkungan, Departemen Perilaku Kesehatan, Lingkungan dan Kedokteran Sosial, FK-KMK UGM
